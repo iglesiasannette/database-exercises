@@ -44,3 +44,61 @@ GRANT SELECT, INSERT, UPDATE, DELETE ON sally_db.sallys_table TO 'sally'@'localh
 
 *Granting all permissions and grant privileges*
 GRANT ALL ON *.* TO 'billy'@'localhost' WITH GRANT OPTION;
+
+//Listing users:
+SELECT user, host FROM mysql.user;
+
+//Use the INSERT statement to create data
+INSERT INTO table_name (field1, field2, ...)
+VALUES ('value1', 'value2', ...);
+
+EX:
+for this quotes table...
+
+CREATE TABLE quotes (
+    author_first_name VARCHAR(50),
+    author_last_name  VARCHAR(100) NOT NULL,
+    content TEXT NOT NULL
+);
+
+step1:
+INSERT INTO quotes(author_first_name,author_last_name_content)
+VALUES ('Charles', 'Lemagne','Knowing a second language is to have a second soul.')
+** apostrophes need a second tic or a backslash right before
+** double quotes can be used
+
+step2:
+specify the database you want it to go into
+
+//Use the SELECT statement to read data
+SELECT * FROM quotes;
+SELECT column1, column2, ... FROM table_name;
+
+EX:
+SELECT author_last_name, content FROM quotes;
+
+//Where Clause
+ As we can see, SELECT will return all the rows in our table. If we want to
+ change what data is being returned, we need to narrow down our selection. We can do this
+  by using a WHERE clause. WHERE allows you to specify a condition that must be true for a
+  given row to be displayed. The basic syntax looks like:
+
+  EXAMPLE :
+
+  SELECT column1, column2, ...
+  FROM table_name
+  WHERE column_name = 'value';
+
+Notice that for comparison SQL uses just a single = and not the double == we have used before.
+For example, if we wanted all the quotes written by 'Adams' we could do:
+SELECT * FROM quotes WHERE author_last_name = 'Adams';
+
+Also remember, the guaranteed fastest and most precise way to find a single record in a table
+is to use the table's primary key:
+
+SELECT * FROM quotes WHERE id = 5;
+
+//Use the UPDATE statement to update data
+  Use the DELETE statement to delete data
+  Introduce the WHERE clause
+  Understand MySQL operators

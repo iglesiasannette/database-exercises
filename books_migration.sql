@@ -1,12 +1,12 @@
 USE codeup_test_db;
 
-DROP TABLE IF EXISTS albums;
+DROP TABLE IF EXISTS books;
 
 CREATE TABLE books (
   id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
   title VARCHAR(255),
   author_first_name VARCHAR(255) NOT NULL DEFAULT 'Unknown',
-  author_last_name DATE NOT NULL,
+  author_last_name VARCHAR(255) NOT NULL DEFAULT 'Unknown',
   description TEXT,
   genre VARCHAR(255),
   published INT NOT NULL DEFAULT '0',
