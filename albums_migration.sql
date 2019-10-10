@@ -1,6 +1,8 @@
 USE codeup_test_db;
 
-CREATE TABLE IF NOT EXISTS albums (
+DROP TABLE IF EXISTS albums;
+
+CREATE TABLE  albums (
   id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (id),
   artist VARCHAR(255),

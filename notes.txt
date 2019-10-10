@@ -1,0 +1,46 @@
+
+//To create a database:
+CREATE DATABASE IF NOT EXISTS database_name;
+
+//To use a database:
+USE database_name;
+
+//To create a user
+CREATE USER 'username'@'hostname' IDENTIFIED BY 'userPassword';
+
+//To delete (or drop) a user:
+DROP USER 'user'@'hostname';
+
+//To create a table:
+Create Table table_name(
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    field_name2 TYPE,
+    field_name3 TYPE,
+    PRIMARY KEY(id)
+    );
+
+//To see tables in a database:
+SHOW TABLES;
+
+//To see the contents of a table:
+DESCRIBE table_name;
+
+//To see the structure of a database:
+SHOW CREATE DATABASE database_name;
+
+//Deleting a table:
+DROP DATABASE IF EXISTS database_name;
+
+//Granting privileges to a user:
+*Granting all permissions*
+GRANT ALL ON *.* TO 'billy'@'localhost';
+
+*Granting selective permissions*
+GRANT SELECT ON *.* TO 'read_only'@'localhost';
+(where the first * is the database name and the second * is the table name)
+and
+GRANT SELECT, INSERT, UPDATE, DELETE ON sally_db.sallys_table TO 'sally'@'localhost';
+(for other privileges)
+
+*Granting all permissions and grant privileges*
+GRANT ALL ON *.* TO 'billy'@'localhost' WITH GRANT OPTION;
