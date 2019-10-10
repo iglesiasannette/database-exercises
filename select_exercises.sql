@@ -6,7 +6,7 @@ WHERE artist = 'Pink Floyd' ;
 
 SELECT release_date "The Beatles released Sgt. Pepper's Lonley Hearts Club in:  "
 FROM albums
-WHERE name = '%Sgt';
+WHERE name LIKE '%Sgt';
 
 SELECT genre "The album Nevermind is categorized in the this genre: "
 FROM albums
