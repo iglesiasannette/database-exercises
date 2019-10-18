@@ -10,7 +10,7 @@ AND last_name LIKE '%e';
 -- find how many days they have been working at the company (Hint: You will also need to
 -- use now() or curdate())
 
-SELECT CONCAT(first_name, ' ', last_name) AS name, CONCAT('Working at the company for ', DATEDIFF(NOW(), hire_date) / 365, ' days') as years_at_company_message
+SELECT CONCAT(first_name, ' ', last_name) AS 'Employee Name', CONCAT('Working at the company for ', DATEDIFF(NOW(), hire_date) / 365, ' years') as 'Tenure'
 FROM employees
 WHERE birth_date LIKE '%12-25'
 AND hire_date LIKE '199%'
